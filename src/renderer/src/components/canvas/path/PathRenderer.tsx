@@ -6,7 +6,7 @@ export default function PathRenderer() {
     const autoStepIDs = useAutoStepIDs();
 
     return (
-        <Group>
+        <Group listening={false}>
             {autoStepIDs.map((autoStepID) => (
                 <PathSegmentRenderer
                     key={autoStepID}

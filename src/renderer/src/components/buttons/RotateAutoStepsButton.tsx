@@ -1,25 +1,25 @@
-import { IconButton } from "@mui/material";
+import {IconButton} from "@mui/material";
 import useSettingsValue from "../../hooks/Utils/useSettings.ts";
 import RotateLeftIcon from '@mui/icons-material/RotateLeft';
 import RotateRightIcon from '@mui/icons-material/RotateRight';
-import useRotatePath from "../../hooks/Path/useRotatePath.ts";
+import useRotateAutoSteps from "../../hooks/AutoSteps/actions/useRotateAutoSteps.ts";
 
 export interface RotatePathButtonProps {
     clockwise?: boolean;
 }
 
-export default function RotatePathButton(props: RotatePathButtonProps) {
-    const { showOccupancyGrid } = useSettingsValue();
-    const rotatePath = useRotatePath();
+export default function RotateAutoStepsButton(props: RotatePathButtonProps) {
+    const {showOccupancyGrid} = useSettingsValue();
+    const rotatePath = useRotateAutoSteps();
 
     if (showOccupancyGrid)
         return null;
     return (
         <IconButton
             aria-label={`Rotate Path ${props.clockwise ? "Clockwise" : "Counter-Clockwise"}`}
-            onClick={() => rotatePath(props.clockwise)}
+            onClick={() => rotatePath(props.clockwise ?? false)}
         >
-            {props.clockwise ? <RotateRightIcon /> : <RotateLeftIcon />}
+            {props.clockwise ? <RotateRightIcon/> : <RotateLeftIcon/>}
         </IconButton>
     )
 }

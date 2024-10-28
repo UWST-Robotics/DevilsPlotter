@@ -33,8 +33,8 @@ export default function MainCanvas() {
             >
                 <WatermarkRenderer/>
                 <FieldImageRenderer/>
-                <AutoStepsRenderer/>
                 <PathRenderer/>
+                <AutoStepsRenderer/>
                 <GridRenderer
                     cellSize={12}
                     color={"#333"}

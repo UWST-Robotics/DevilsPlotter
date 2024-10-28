@@ -37,8 +37,10 @@ export default function AutoStepRenderer(props: AutoStepRendererProps) {
     // Actions
     const selectAutoStep = () => setSelectedAutoStepID(props.id);
 
+    if (autoStep?.type === "STOP" || autoStep?.type === "UNKNOWN")
+        return null;
     if (!pose)
-        return;
+        return null;
     return (
         <Group
             x={pose.x * pixelsPerInch}
@@ -52,7 +54,7 @@ export default function AutoStepRenderer(props: AutoStepRendererProps) {
             onDragMove={onDragMove}
             onDragEnd={onDragEnd}
             onClick={e => e.cancelBubble = true}
-            draggable
+            draggable={autoStep?.type !== AutoStepType.ROTATE}
         >
             <RobotRenderer
                 color={color}

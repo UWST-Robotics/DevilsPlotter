@@ -2,6 +2,9 @@ import SettingsButton from "../settings/SettingsButton.tsx";
 import DownloadButton from "../buttons/DownloadButton.tsx";
 import UploadButton from "../buttons/UploadButton.tsx";
 import {Divider} from "@mui/material";
+import MirrorAutoStepsButton from "../buttons/MirrorAutoStepsButton.tsx";
+import UndoRedoButton from "../buttons/UndoRedoButton.tsx";
+import RotateAutoStepsButton from "../buttons/RotateAutoStepsButton.tsx";
 
 export default function TopBar() {
 
@@ -36,20 +39,15 @@ export default function TopBar() {
                 <DownloadButton/>
                 <UploadButton/>
                 <Divider orientation="vertical" variant="middle" flexItem/>
-                {/*<MirrorPathButton />*/}
-                {/*<MirrorPathButton vertical />*/}
-                {/*<MirrorOccupancyButton />*/}
-                {/*<MirrorOccupancyButton vertical />*/}
-                {/*<Divider orientation="vertical" variant="middle" flexItem />*/}
-                {/*<RotatePathButton />*/}
-                {/*<RotatePathButton clockwise />*/}
-                {/*<RotateOccupancyButton />*/}
-                {/*<RotateOccupancyButton clockwise />*/}
-                {/*<Divider orientation="vertical" variant="middle" flexItem/>*/}
-                {/*<UndoRedoButton/>*/}
-                {/*<UndoRedoButton redo/>*/}
+                <MirrorAutoStepsButton/>
+                <MirrorAutoStepsButton vertical/>
                 <Divider orientation="vertical" variant="middle" flexItem/>
-                {/*<SwitchModeButton/>*/}
+                <RotateAutoStepsButton/>
+                <RotateAutoStepsButton clockwise/>
+                <Divider orientation="vertical" variant="middle" flexItem/>
+                <UndoRedoButton/>
+                <UndoRedoButton redo/>
+                <Divider orientation="vertical" variant="middle" flexItem/>
                 <SettingsButton/>
             </div>
         </div>

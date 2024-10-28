@@ -1,4 +1,5 @@
 import TransparentCard from "../common/TransparentCard.tsx";
+import AutoStepEditorPanel from "../autoStepEditor/AutoStepEditorPanel.tsx";
 
 export default function RightSideBar() {
     return (
@@ -16,7 +17,7 @@ export default function RightSideBar() {
             }}
         >
             <TransparentCard>
-                <p>Test</p>
+                <AutoStepEditorPanel/>
             </TransparentCard>
         </div>
     )

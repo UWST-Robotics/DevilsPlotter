@@ -1,6 +1,7 @@
 import {atom, useAtom} from "jotai";
 import {selectedAutoStepIDAtom} from "./useSelectedAutoStepID.ts";
 import {autoStepAtomFamily} from "../useAutoStep.ts";
+import AutoStep from "../../../types/AutoSteps/AutoStep.ts";
 
 // Atoms
 export const selectedAutoStepAtom = atom((get) => {
@@ -9,6 +10,8 @@ export const selectedAutoStepAtom = atom((get) => {
         return undefined;
 
     return get(autoStepAtomFamily(selectedAutoStepID));
+}, (_get, set, update: AutoStep) => {
+    set(autoStepAtomFamily(update.id), update);
 });
 
 // Hooks
