@@ -14,7 +14,7 @@ export default function PoseInput(props: PoseInputProps) {
         <>
             <InputGroup>
                 <FlexNumericInput
-                    inputProps={{label: "X"}}
+                    inputProps={{label: "X", variant: "outlined"}}
                     value={pose.x}
                     onChange={(x) => onChange({...pose, x})}
                 />
@@ -26,7 +26,7 @@ export default function PoseInput(props: PoseInputProps) {
             </InputGroup>
             <InputGroup>
                 <FlexNumericInput
-                    inputProps={{label: "Rotation"}}
+                    inputProps={{label: "Rotation", sx: {marginTop: 1}, fullWidth: true}}
                     value={pose.r}
                     onChange={(r) => onChange({...pose, r})}
                 />

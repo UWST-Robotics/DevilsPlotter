@@ -6,9 +6,11 @@
   "private": true,
   "version": "0.3.0",
   "main": "./out/main/main.js",
+  "type": "module",
   "license": "GPL-3.0",
   "scripts": {
     "dev": "electron-vite dev -w",
+    "dev:web": "vite src/renderer --config vite.config.ts",
     "build": "tsc --noEmit --composite false && electron-vite build",
     "build:win": "yarn run build && electron-builder --win",
     "build:mac": "yarn run build && electron-builder --mac",

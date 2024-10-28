@@ -8,7 +8,7 @@ import RightSideBar from "./components/navigation/RightSideBar.tsx";
 
 const darkTheme = createTheme({
     palette: {
-        mode: 'dark',
+        mode: 'dark'
     },
 });
 

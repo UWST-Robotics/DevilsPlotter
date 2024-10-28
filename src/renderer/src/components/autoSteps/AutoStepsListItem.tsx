@@ -21,7 +21,7 @@ export default function AutoStepsListItem(props: AutoStepsListItemProps) {
 
     // State
     const isSelected = selectedAutoStepID === props.autoStepID;
-    const isStart = autoStep?.type === AutoStepType.START;
+    const isStart = autoStep?.type === AutoStepType.JUMPTO;
     const isStop = autoStep?.type === AutoStepType.STOP;
     const intent = isStart ? "success" : isStop ? "danger" : "primary";
 

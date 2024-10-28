@@ -1,8 +1,8 @@
 enum AutoStepType {
     DRIVE = "DRIVE",
     ROTATE = "ROTATE",
-    GOTO = "GOTO",
-    START = "START",
+    DRIVETO = "DRIVETO",
+    JUMPTO = "JUMPTO",
     STOP = "STOP",
     UNKNOWN = "UNKNOWN"
 }

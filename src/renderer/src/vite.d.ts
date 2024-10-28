@@ -11,4 +11,4 @@ declare const electronAPI: import("../../preload/preload.ts").default | undefine
 /**
  * Application version string. Imported from package.json during the build process.
  */
-declare const APP_VERSION: string
+declare const APP_VERSION: string | null;

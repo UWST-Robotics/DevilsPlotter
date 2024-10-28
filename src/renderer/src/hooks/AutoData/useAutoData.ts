@@ -7,7 +7,7 @@ export const DEFAULT_DATA: AutoData = {
     steps: [
         {
             id: generateGUID(),
-            type: AutoStepType.START,
+            type: AutoStepType.JUMPTO,
             pose: {x: 0, y: 0, r: 0}
         }
     ],

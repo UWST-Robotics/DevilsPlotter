@@ -30,6 +30,9 @@ export default function PathSegmentRenderer(props: PathSegmentRendererProps) {
             stroke={"#ddd"}
             strokeWidth={0.4 * pixelsPerInch}
             perfectDrawEnabled={false}
+
+            dashEnabled={autoStep.type === "JUMPTO"}
+            dash={[5, 5]}
         />
     )
 }

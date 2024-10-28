@@ -13,7 +13,7 @@ export default function RightSideBar() {
                 justifyContent: "center",
                 alignItems: "center",
                 pointerEvents: "none",
-                width: 200
+                width: 300
             }}
         >
             <TransparentCard>

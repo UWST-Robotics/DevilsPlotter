@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react'
-import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
+import {defineConfig, externalizeDepsPlugin} from 'electron-vite'
 
 export default defineConfig({
     main: {
@@ -9,11 +9,11 @@ export default defineConfig({
         plugins: [externalizeDepsPlugin()],
     },
     renderer: {
-        publicDir: 'public',
+        publicDir: "public",
         build: {
             lib: {
-                name: 'AutoDevil',
-                entry: 'src/main/main.ts'
+                name: "AutoDevil",
+                entry: "src/main/main.ts"
             }
         },
         plugins: [react()],

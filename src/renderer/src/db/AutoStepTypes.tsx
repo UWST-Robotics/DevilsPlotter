@@ -1,5 +1,5 @@
 import AutoStepType from "../types/AutoSteps/AutoStepType.ts";
-import {ArrowForward, PinDrop, PlayArrow, RotateRight, Stop} from "@mui/icons-material";
+import {ArrowForward, PinDrop, RotateRight, Route, Stop} from "@mui/icons-material";
 import AutoStepInfo from "../types/AutoSteps/AutoStepInfo.ts";
 import generateGUID from "../utils/generateGUID.ts";
 import AutoStep from "../types/AutoSteps/AutoStep.ts";
@@ -9,21 +9,20 @@ const DEG_TO_RAD = Math.PI / 180;
 
 const AutoStepTypes: AutoStepInfo[] = [
     {
-        isHidden: true,
-        icon: <PlayArrow/>,
-        name: "Start Pose",
-        type: AutoStepType.START,
+        icon: <PinDrop/>,
+        name: "Jump to Pose",
+        type: AutoStepType.JUMPTO,
         deserialize: (params: number[]) => {
             if (params.length < 3)
                 throw new Error("Invalid number of parameters");
             return {
                 id: generateGUID(),
-                type: AutoStepType.START,
+                type: AutoStepType.JUMPTO,
                 pose: {x: params[0], y: params[1], r: params[2]}
             };
         },
         serialize: (step: AutoStep) => {
-            if (step.type !== AutoStepType.START)
+            if (step.type !== AutoStepType.JUMPTO)
                 throw new Error("Invalid step type");
             const {pose} = step;
             return [
@@ -85,15 +84,15 @@ const AutoStepTypes: AutoStepInfo[] = [
         }
     },
     {
-        icon: <PinDrop/>,
-        name: "Go to Pose",
-        type: AutoStepType.GOTO,
+        icon: <Route/>,
+        name: "Drive to Pose",
+        type: AutoStepType.DRIVETO,
         deserialize: (params: number[]) => {
             if (params.length < 5)
                 throw new Error("Invalid number of parameters");
             return {
                 id: generateGUID(),
-                type: AutoStepType.GOTO,
+                type: AutoStepType.DRIVETO,
                 pose: {x: params[0], y: params[1], r: params[2]},
                 initialOffset: params[3],
                 exitOffset: params[4]

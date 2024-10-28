@@ -4,6 +4,7 @@ import useSelectedAutoStepProp from "../../hooks/AutoSteps/selected/useSelectedA
 
 export interface AutoStepNumericInputProps {
     prop: keyof AutoStep;
+    defaultValue?: number;
     label: string;
     isVisible: boolean;
 }
@@ -16,9 +17,9 @@ export default function AutoStepNumericInput(props: AutoStepNumericInputProps) {
         return null;
     return (
         <FlexNumericInput
-            value={value ? Number(value) : 0}
+            value={value ? Number(value) : props.defaultValue ?? 0}
             onChange={(value) => setValue(value)}
-            inputProps={{label}}
+            inputProps={{label, sx: {marginTop: 1}, fullWidth: true}}
         />
     )
 }

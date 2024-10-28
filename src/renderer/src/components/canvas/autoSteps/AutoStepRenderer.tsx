@@ -24,7 +24,7 @@ export default function AutoStepRenderer(props: AutoStepRendererProps) {
 
     // State
     const isSelected = selectedAutoStepID === props.id;
-    const isStart = autoStep?.type === AutoStepType.START;
+    const isStart = autoStep?.type === AutoStepType.JUMPTO;
 
     const color = React.useMemo(() => {
         if (isSelected)
