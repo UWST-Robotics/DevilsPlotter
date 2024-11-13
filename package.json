@@ -6,7 +6,6 @@
   "private": true,
   "version": "0.3.0",
   "main": "./out/main/main.js",
-  "type": "module",
   "license": "GPL-3.0",
   "scripts": {
     "dev": "electron-vite dev -w",

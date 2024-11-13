@@ -1,8 +1,10 @@
 import AutoStep from "../../types/AutoSteps/AutoStep.ts";
 import FlexNumericInput from "../common/input/FlexNumericInput.tsx";
-import useSelectedAutoStepProp from "../../hooks/AutoSteps/selected/useSelectedAutoStepProp.tsx";
+import useAutoStepProp from "../../hooks/AutoSteps/useAutoStepProp.tsx";
+import GUID from "../../types/GUID.ts";
 
 export interface AutoStepNumericInputProps {
+    id: GUID;
     prop: keyof AutoStep;
     defaultValue?: number;
     label: string;
@@ -10,7 +12,7 @@ export interface AutoStepNumericInputProps {
 }
 
 export default function AutoStepNumericInput(props: AutoStepNumericInputProps) {
-    const [value, setValue] = useSelectedAutoStepProp(props.prop);
+    const [value, setValue] = useAutoStepProp(props.prop, props.id);
     const {label, isVisible} = props;
 
     if (!isVisible)

@@ -21,6 +21,9 @@ export const addAutoStepAtom = atom(null, (get, set, autoStep: AutoStep) => {
 
     // Update Atom
     set(autoStepsAtom, autoStepsCopy);
+
+    // Select AutoStep
+    set(selectedAutoStepIDAtom, autoStep.id);
 });
 
 // Hooks

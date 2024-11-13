@@ -1,10 +1,11 @@
-import {ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
+import {Box, Collapse, ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
 import AutoStepsListItemContainer from "./AutoStepsListItemContainer.tsx";
 import useSelectedAutoStepID from "../../hooks/AutoSteps/selected/useSelectedAutoStepID.ts";
 import GUID from "../../types/GUID.ts";
 import useAutoStep from "../../hooks/AutoSteps/useAutoStep.ts";
 import useAutoStepInfo from "../../hooks/AutoSteps/AutoStepInfo/useAutoStepInfo.ts";
 import AutoStepType from "../../types/AutoSteps/AutoStepType.ts";
+import AutoStepEditorPanel from "../autoStepEditor/AutoStepEditorPanel.tsx";
 
 export interface AutoStepsListItemProps {
     autoStepID: GUID;
@@ -26,25 +27,33 @@ export default function AutoStepsListItem(props: AutoStepsListItemProps) {
     const intent = isStart ? "success" : isStop ? "danger" : "primary";
 
     return (
-        <AutoStepsListItemContainer
-            disablePadding
-            intent={intent}
-        >
-            <ListItemButton
-                sx={{
-                    borderRadius: 2
-                }}
-                dense
-                selected={isSelected}
-                onClick={selectThisStep}
+        <Box>
+            <AutoStepsListItemContainer
+                disablePadding
+                intent={intent}
             >
-                <ListItemIcon>
-                    {autoStepInfo?.icon}
-                </ListItemIcon>
-                <ListItemText
-                    primary={autoStepInfo?.name}
+                <ListItemButton
+                    sx={{
+                        borderRadius: 2
+                    }}
+                    dense
+                    selected={isSelected}
+                    onClick={selectThisStep}
+                >
+                    <ListItemIcon>
+                        {autoStepInfo?.icon}
+                    </ListItemIcon>
+                    <ListItemText
+                        primary={autoStepInfo?.name}
+                    />
+                </ListItemButton>
+            </AutoStepsListItemContainer>
+
+            <Collapse in={isSelected}>
+                <AutoStepEditorPanel
+                    id={props.autoStepID}
                 />
-            </ListItemButton>
-        </AutoStepsListItemContainer>
+            </Collapse>
+        </Box>
     )
 }
